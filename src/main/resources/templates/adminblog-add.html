@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> Блог </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header">
+
+</header>
+<br>
+<br>
+
+<div class="container mt-5 mb-5">
+    <h1>Добавить статью:</h1>
+    <form action="/adminblog/add" method="post" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Введите заголовок статьи" class="form-control">
+        <br>
+        <input type="text" name="anons" placeholder="Введите анонс статьи" class="form-control">
+        <br>
+        <textarea name="fulltext" placeholder="Введите полный текст статьи" class="form-control"></textarea>
+        <br>
+        <input type="file" name="file" placeholder="Выберете файл" class="form-control">
+        <br>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <br>
+        <button type="submit" multiple="true" class="btn btn-success"> Добавить статью </button>
+    </form>
+</div>
+
+
+
+
+
+</body>
+<footer th:insert="blocks/footer :: footer"></footer>
+</html>

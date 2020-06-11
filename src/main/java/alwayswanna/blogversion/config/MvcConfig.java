@@ -19,7 +19,7 @@ public class MvcConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/posts/uploadImage/**")
                 .addResourceLocations("file://" + uploadPath + "/");
-        registry.addResourceHandler("/static/**")
+        registry.addResourceHandler("static/**")
                 .addResourceLocations("classpath:/static/");
     }
 }

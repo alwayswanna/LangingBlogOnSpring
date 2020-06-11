@@ -1,23 +1,45 @@
 <div th:fragment="header">
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="/">Главная</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/posts"> Книга <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#aboutme">Обо мне </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/blog/add"> Добавить статью </a>
-                    </li>
-                </ul>
 
+    <header role="banner">
+        <title>Add/Edit post page</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+        <link rel="icon" sizes="48x48" href="static/img/icon.png">
+
+        <link rel="stylesheet" href="static/css/bootstrap.css">
+        <link rel="stylesheet" href="static/css/animate.css">
+        <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+
+        <link rel="stylesheet" href="static/fonts/ionicons/css/ionicons.min.css">
+        <link rel="stylesheet" href="static/fonts/fontawesome/css/font-awesome.min.css">
+
+
+        <!-- Theme Style -->
+        <link rel="stylesheet" href="static/css/style.css">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand absolute" href="/">MiniBlog</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarsExample05">
+                    <ul class="navbar-nav mx-auto pl-lg-5 pl-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/"> Главная </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#aboutme">Обо мне</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/posts"> Читать </a>
+                        </li>
+                    </ul>
+
+                </div>
             </div>
         </nav>
     </header>

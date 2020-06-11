@@ -5,6 +5,7 @@ import alwayswanna.blogversion.models.Role;
 import alwayswanna.blogversion.models.User;
 import alwayswanna.blogversion.repository.AdminRepo;
 import alwayswanna.blogversion.repository.PostRepository;
+import alwayswanna.blogversion.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -24,6 +25,8 @@ public class AdminController {
     // Registration and login for pages.
     @Autowired
     private AdminRepo adminRepo;
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/registration")
     public String registration(){
@@ -42,14 +45,10 @@ public class AdminController {
 
     @PostMapping("/registration")
     public String addUser(User user, Map<String, Object> model){
-        User userFromDB = adminRepo.findByUsername(user.getUsername());
-        if (userFromDB != null){
-            model.put("message", "User exists");
+        if(!userService.addUser(user)){
+            model.put("message", "User exists!");
             return "registration";
         }
-        user.setActive(true);
-        user.setRoles(Collections.singleton(Role.USER));
-        adminRepo.save(user);
         return "redirect:/login";
     }
 
